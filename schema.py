@@ -1,5 +1,6 @@
 import graphene
 from graphene_django import DjangoObjectType
+from graphene_file_upload.scalars import Upload
 
 from caches.models import Session, Cache, Clue
 
@@ -22,6 +23,10 @@ class SessionProgress(graphene.ObjectType):
     cache = graphene.Field(lambda : CacheType)
     current_index = graphene.Float()
     session_length = graphene.Float()
+
+class VerifyImage(graphene.ObjectType):
+    cache_id = graphene.ID()
+    verify = graphene.Boolean()
 
 class Query(graphene.ObjectType):
     all_sessions = graphene.List(SessionType)
@@ -182,6 +187,18 @@ class DeleteClue(graphene.Mutation):
         clue = Clue.objects.get(pk=id)
         clue.delete()
         return DeleteClue(session)
+
+class UploadMutation(graphene.Mutation):
+    class Arguments:
+        id = graphene.ID()
+        file = Upload(required=True)
+
+    success = graphene.Boolean()
+
+    def mutate(self, info, id, file, **kwargs):
+        #Do something with the file
+        success = True
+        return Verfy(cache_id = id, cerify = success )
 
 class Mutations(graphene.ObjectType):
     create_session = CreateSession().Field()
