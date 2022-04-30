@@ -3,6 +3,7 @@ from graphene_django import DjangoObjectType
 from graphene_file_upload.scalars import Upload
 from compare.utils import are_similar
 from graphene_django.rest_framework.mutation import SerializerMutation
+from caches.serializers import Submmit
 
 from caches.models import Session, Cache, Clue
 
@@ -25,16 +26,6 @@ class SessionProgress(graphene.ObjectType):
     cache = graphene.Field(lambda : CacheType)
     current_index = graphene.Float()
     session_length = graphene.Float()
-
-class Submmit(SerializerMutation):
-    class Meta:
-        serializer_class = MySerializer
-    
-    def mutate(root, info, id, cache, image):
-        chache = Cache.objects.get(pk=id)
-        if are_similar(image, cache.image):
-            cache.acomplished = True
-            cache.save()
     
 
 class Query(graphene.ObjectType):

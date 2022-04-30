@@ -4,15 +4,6 @@ import base64, uuid
 from django.core.files.base import ContentFile
 from caches.models import Submmit
 
-from .nlp import category_similarity
-
-class Submmit(serializers.ModelSerializer):
-    image = Base64ImageField(read_only = False, required=False)
-
-    class Meta:
-        model = Submmit
-        fields = ("id", "cache", "image")
-
 class Base64ImageField(serializers.ImageField):
 
     def to_internal_value(self, data):
@@ -23,3 +14,11 @@ class Base64ImageField(serializers.ImageField):
             id = uuid.uuid4()
             data = ContentFile(base64.b64decode(imgstr), name = id.urn[9:] + '.' + ext)
         return super(Base64ImageField, self).to_internal_value(data)
+
+class SubmmitSerializer(serializers.ModelSerializer):
+    image = Base64ImageField(read_only = False, required=False)
+
+    class Meta:
+        model = Submmit
+        fields = ("id", "cache", "image")
+

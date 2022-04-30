@@ -6,13 +6,13 @@ class Session(models.Model):
 
 class Cache(models.Model):
     session = models.ForeignKey(Session, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(default="llit.jpeg")
     name = models.CharField(max_length=128)
     acomplished = models.BooleanField(default=False)
 
 class Submmit(models.Model):
     cache = models.ForeignKey(Cache, on_delete=models.CASCADE)
-    image = models.ImageField()
+    image = models.ImageField(default="llit.jpeg")
 
 class Clue(models.Model):
     cache = models.ForeignKey(Cache, on_delete=models.CASCADE)
