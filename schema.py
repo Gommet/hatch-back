@@ -7,17 +7,17 @@ from caches.models import Session, Cache, Clue
 class SessionType(DjangoObjectType):
     class Meta:
         model = Session
-        fields = ("name", "date")
+        fields = ("id", "name", "date")
 
 class CacheType(DjangoObjectType):
     class Meta:
         model = Cache
-        fields = ("session", "name", "acomplished")
+        fields = ("id", "session", "name", "acomplished")
 
 class ClueType(DjangoObjectType):
     class Meta:
         model = Clue
-        fields = ("cache", "clue") 
+        fields = ("id", "cache", "clue") 
 
 class SessionProgress(graphene.ObjectType):
     cache = graphene.Field(lambda : CacheType)
@@ -41,10 +41,10 @@ class Query(graphene.ObjectType):
         return Session.objects.all()       
 
     def resolve_all_caches(root, info):
-        return Cache.objects.select_related("session").all()    
+        return Cache.objects.all()    
 
     def resolve_all_clues(root, info):
-        return Clue.objects.select_related("caches").all()                                                                                        
+        return Clue.objects.all()                                                                                        
 
     def resolve_session_by_id(root, info, id):
         try:
@@ -210,6 +210,5 @@ class Mutations(graphene.ObjectType):
     delete_session = DeleteSession().Field()
     delete_cache = DeleteCache().Field()
     delete_clue = DeleteClue().Field()
-
 
 schema = graphene.Schema(query=Query, mutation=Mutations)
