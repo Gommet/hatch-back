@@ -1,0 +1,4 @@
+Django==3.2.8
+graphene
+graphene_django
+graphene-file-upload
