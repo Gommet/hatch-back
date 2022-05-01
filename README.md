@@ -1,6 +1,8 @@
 # Hatch API
 
-[<img align=center src="https://pandorafms.com/blog/wp-content/uploads/2019/03/what-is-cache-memory-featured.jpg">]()
+<p align="center">
+<img src="https://pandorafms.com/blog/wp-content/uploads/2019/03/what-is-cache-memory-featured.jpg">
+</p>
 
 This api was a project for HackUPC 2022. The aim of the project was to create a game similar to GeoCatching but inside the venue of the Hack and coperative between all people.
 
