@@ -1,5 +1,9 @@
 # Hatch API
 
+<p align="center">
+<img src="https://pandorafms.com/blog/wp-content/uploads/2019/03/what-is-cache-memory-featured.jpg">
+</p>
+
 This api was a project for HackUPC 2022. The aim of the project was to create a game similar to GeoCatching but inside the venue of the Hack and coperative between all people.
 
 This api is easily integrable with any frontend. It has been developed using GraphQL so it makes even easyer the integration with front techs as Data can be queryed on-demand.
@@ -18,9 +22,16 @@ If the image is similar, which means that is the Cache, that cache will be marke
 
 Each cache has a determined the number of clues that are incrementally going public as the time without finding one passes.
 
+## Run
+Required Python 3.9.*
+```
+python -m install -r requirements.txt
+python manage.py runserver
+```
+
 ## Technologies
 
-Api entarelly build with Django-Graphene, a GraphQL library.
+Api entarelly build with Graphene-Django, a GraphQL library.
 
 ## Authors
 
