@@ -22,6 +22,13 @@ If the image is similar, which means that is the Cache, that cache will be marke
 
 Each cache has a determined the number of clues that are incrementally going public as the time without finding one passes.
 
+## Run
+Required Python 3.9.*
+´´´
+python -m install -r requirements.txt
+python manage.py runserver
+´´´
+
 ## Technologies
 
 Api entarelly build with Graphene-Django, a GraphQL library.
