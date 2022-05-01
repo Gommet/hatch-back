@@ -1,5 +1,7 @@
 # Hatch API
 
+[<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpandorafms.com%2Fblog%2Fwhat-is-cache-memory%2F&psig=AOvVaw0-Jm0UW_9fbnGbWwBhKl6r&ust=1651458938626000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJDmtviivfcCFQAAAAAdAAAAABAD">]()
+
 This api was a project for HackUPC 2022. The aim of the project was to create a game similar to GeoCatching but inside the venue of the Hack and coperative between all people.
 
 This api is easily integrable with any frontend. It has been developed using GraphQL so it makes even easyer the integration with front techs as Data can be queryed on-demand.
