@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime    
 
 class Session(models.Model):
     name = models.CharField(max_length=128)
@@ -17,4 +18,4 @@ class Submmit(models.Model):
 class Clue(models.Model):
     cache = models.ForeignKey(Cache, on_delete=models.CASCADE)
     clue = models.TextField()
-    datetime = models.DateTimeField()
+    datetime = models.DateTimeField(default=datetime.now, blank=True)
