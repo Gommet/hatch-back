@@ -18,9 +18,9 @@ class SubmmitViewSet(APIView):
         serializer.is_valid(raise_exception=True)
         v = serializer.save()
         cache = Cache.objects.get(id=serializer.validated_data['cache'].id)
-        print(MEDIA_ROOT+cache.image.name)
-        print(MEDIA_ROOT+serializer.validated_data['image'].__str__())
-        return Response(are_similar(MEDIA_ROOT+serializer.validated_data['image'].__str__(), MEDIA_ROOT+cache.image.name))
+        print(MEDIA_ROOT+"/"+cache.image.name)
+        print(MEDIA_ROOT+"/"+serializer.validated_data['image'].__str__())
+        return Response(are_similar(MEDIA_ROOT+"/"+serializer.validated_data['image'].__str__(), MEDIA_ROOT+"/"+cache.image.name))
 
 
 
