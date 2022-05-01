@@ -24,7 +24,7 @@ Each cache has a determined the number of clues that are incrementally going pub
 
 ## Technologies
 
-Api entarelly build with Django-Graphene, a GraphQL library.
+Api entarelly build with Graphene-Django, a GraphQL library.
 
 ## Authors
 
