@@ -20,7 +20,7 @@ class CacheType(DjangoObjectType):
 class ClueType(DjangoObjectType):
     class Meta:
         model = Clue
-        fields = ("id", "cache", "clue") 
+        fields = ("id", "cache", "clue", "datetime")
 
 class SessionProgress(graphene.ObjectType):
     cache = graphene.Field(lambda : CacheType)

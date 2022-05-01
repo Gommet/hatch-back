@@ -17,3 +17,4 @@ class Submmit(models.Model):
 class Clue(models.Model):
     cache = models.ForeignKey(Cache, on_delete=models.CASCADE)
     clue = models.TextField()
+    datetime = models.DateTimeField()
