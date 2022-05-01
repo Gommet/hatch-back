@@ -24,10 +24,10 @@ Each cache has a determined the number of clues that are incrementally going pub
 
 ## Run
 Required Python 3.9.*
-´´´
+```
 python -m install -r requirements.txt
 python manage.py runserver
-´´´
+```
 
 ## Technologies
 
